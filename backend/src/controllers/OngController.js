@@ -1,5 +1,6 @@
-const connection = require("../database/connection");
 const crypto = require("crypto");
+const connection = require("../database/connection");
+
 module.exports = {
   async index(request, response) {
     const ongs = await connection("ongs").select("*");
@@ -20,6 +21,7 @@ module.exports = {
       city,
       uf,
     });
+
     return response.json({ id });
   },
 };

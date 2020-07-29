@@ -1,4 +1,3 @@
-const { index } = require("./IncidentController");
 const connection = require("../database/connection");
 
 module.exports = {
@@ -8,6 +7,7 @@ module.exports = {
     const incidents = await connection("incidents")
       .where("ong_id", ong_id)
       .select("*");
+
     return response.json(incidents);
   },
 };
